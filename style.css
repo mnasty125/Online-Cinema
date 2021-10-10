@@ -26,11 +26,9 @@ body {
   display: flex;
   margin: 0;
   margin-left: 17px;
-  colorL: #fff;
 }
 .menu-item {
   margin-right: 25px;
-  color: #fff;
 }
 .menu-link {
   text-decoration: none;
