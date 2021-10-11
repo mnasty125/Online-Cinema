@@ -12,14 +12,21 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.nav {
+  position: relative;
+}
 .container {
   max-width: 1170px;
   margin: auto;
+  width: 90%;
 }
 .header {
-  min-height: 100vh;
+  padding-bottom: 60px;
   background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
     url("../img/bg.jpg") no-repeat center top / cover;
+}
+.m-menu {
+  display: none;
 }
 .menu {
   list-style: none;
@@ -68,6 +75,7 @@ body {
 }
 .film-trailer {
   margin: auto;
+  cursor: pointer;
 }
 .film-details {
   display: flex;
@@ -151,12 +159,15 @@ body {
   margin-top: 15px;
 }
 .select-cinema {
-  min-width: 470px;
+  width: 470px;
 }
 .scheme {
   background: rgba(36, 36, 36, 0.18);
   border-radius: 10px;
   margin-bottom: 40px;
+}
+.scheme-svg {
+  max-width: 1170px;
 }
 .scheme path:not(.light) {
   fill: rgba(255, 255, 255, 0.2);
@@ -178,6 +189,7 @@ body {
   display: flex;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
+  width: 90%;
   max-width: 1024px;
   margin: auto;
   padding-top: 22px;
@@ -218,4 +230,81 @@ body {
   font-size: 18px;
   line-height: 21px;
   padding: 24px 52px;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .select-cinema {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .menu-item {
+    margin-right: 20px;
+  }
+  .session {
+    flex-wrap: wrap;
+  }
+  .session-date {
+    margin-bottom: 40px;
+    flex-basis: 70%;
+  }
+  .session-time {
+    order: 2;
+  }
+  .session-cinema {
+    order: 3;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    padding: 20px;
+    margin-left: 20px;
+    flex-direction: column;
+    background-color: #621402;
+    z-index: 9;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20%);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .menu-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .m-menu {
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .is-open {
+    opacity: 90%;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .film-description {
+    margin-right: 30px;
+  }
+  .film {
+    flex-direction: column;
+  }
+  .film-trailer {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 40px;
+  }
 }
